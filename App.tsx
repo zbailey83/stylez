@@ -9,7 +9,8 @@ import {
   Y2KCard,
   BentoCard,
   MinimalCard,
-  MaximalistCard
+  MaximalistCard,
+  TechnicalPaperCard
 } from './components/StyleCards';
 
 const App: React.FC = () => {
@@ -45,6 +46,8 @@ const App: React.FC = () => {
         return <MinimalCard styleData={style} onDownload={handleDownload} />;
       case 8:
         return <MaximalistCard styleData={style} onDownload={handleDownload} />;
+      case 9:
+        return <TechnicalPaperCard styleData={style} onDownload={handleDownload} />;
       default:
         return <MinimalCard styleData={style} onDownload={handleDownload} />;
     }

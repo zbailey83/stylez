@@ -97,6 +97,23 @@ export const galleryData: GalleryData = {
           "type": "full-bleed gradient or solid bright color"
         }
       }
+    },
+    {
+      "id": 9,
+      "name": "Technical Paper Glass",
+      "aesthetic": "clean, technical, airy, structured, frosted",
+      "category": "light-mode-paper-glass",
+      "description": "A bright, modern productivity interface featuring a technical grid-paper background, layered frosted glass panels with high blur, crisp slate typography, and vibrant gradients (Sky Blue to Purple) for accents.",
+      "colors": {
+        "background": {
+          "base": "#F8FAFC",
+          "pattern": "linear-gradient(#E2E8F0 1.5px, transparent 1.5px), linear-gradient(90deg, #E2E8F0 1.5px, transparent 1.5px)"
+        }
+      },
+      "tokens": {
+        "border_radius": "mixed (8px to 24px)",
+        "glass_blur": "12px - 18px"
+      }
     }
   ]
 };

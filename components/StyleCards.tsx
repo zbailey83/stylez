@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleDefinition } from '../types';
-import { Download, ArrowRight, Layers, Box, Cpu, Grid, Zap, Layout } from 'lucide-react';
+import { Download, ArrowRight, Layers, Box, Cpu, Grid, Zap, Layout, FileText } from 'lucide-react';
 
 interface CardProps {
   styleData: StyleDefinition;
@@ -255,6 +255,53 @@ export const MaximalistCard: React.FC<CardProps> = ({ styleData, onDownload }) =
        >
          <span className="transform -rotate-1">Download {styleData.name}.JSON</span>
        </button>
+    </div>
+  </div>
+);
+
+// 9. Technical Paper Glass (Light)
+export const TechnicalPaperCard: React.FC<CardProps> = ({ styleData, onDownload }) => (
+  <div className="h-full relative overflow-hidden rounded-3xl bg-[#F8FAFC] border border-slate-200 shadow-sm group">
+    {/* Grid Background using standard CSS linear-gradient due to complex arbitrary value syntax in Tailwind */ }
+    <div className="absolute inset-0 z-0 opacity-100" 
+         style={{
+             backgroundImage: 'linear-gradient(#E2E8F0 1px, transparent 1px), linear-gradient(90deg, #E2E8F0 1px, transparent 1px)',
+             backgroundSize: '24px 24px'
+         }}>
+    </div>
+    
+    {/* Gradient Accent Blob */}
+    <div className="absolute top-[-20%] right-[-20%] w-[300px] h-[300px] bg-gradient-to-br from-sky-400/20 to-purple-500/20 blur-3xl rounded-full pointer-events-none"></div>
+
+    <div className="relative z-10 h-full flex flex-col p-6">
+      {/* Header Panel */}
+      <div className="bg-white/70 backdrop-blur-md border border-white/60 rounded-2xl p-4 shadow-sm mb-6">
+        <div className="flex items-center gap-2 mb-1">
+          <div className="w-2 h-2 rounded-full bg-sky-400"></div>
+          <span className="text-xs font-mono text-slate-400 uppercase tracking-widest">ID: {styleData.id}</span>
+        </div>
+        <h3 className="font-sans font-bold text-xl text-slate-800 tracking-tight">
+          {styleData.name}
+        </h3>
+      </div>
+
+      {/* Content */}
+      <div className="flex-grow">
+        <p className="font-sans text-slate-600 leading-relaxed text-sm bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-slate-200/50">
+          {styleData.description}
+        </p>
+      </div>
+
+      {/* Button */}
+      <button
+        onClick={() => onDownload(styleData)}
+        className="mt-6 w-full py-3 rounded-xl bg-gradient-to-r from-sky-400/10 to-purple-500/10 border border-slate-200 hover:border-sky-300 text-slate-700 font-semibold text-sm transition-all hover:shadow-md flex items-center justify-center gap-2 group-hover:bg-white/80"
+      >
+        <span>Download {styleData.name}.JSON</span>
+        <div className="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center">
+            <Download size={10} />
+        </div>
+      </button>
     </div>
   </div>
 );
