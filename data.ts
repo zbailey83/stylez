@@ -114,11 +114,46 @@ export const galleryData: GalleryData = {
         "border_radius": "mixed (8px to 24px)",
         "glass_blur": "12px - 18px"
       }
+    },
+    {
+      "id": 10,
+      "name": "Gemini Technical Artifacts",
+      "aesthetic": "technical, futuristic, transparent, precise",
+      "category": "gemini-technical",
+      "description": "A technical, futuristic design system emphasizing transparency, fine borders, and precise typography. Evokes a sense of high-performance engineering.",
+      "meta": {
+        "name": "Gemini Technical Artifacts Theme",
+        "version": "1.0.0",
+        "description": "A technical, futuristic design system emphasizing transparency, fine borders, and precise typography."
+      },
+      "tokens": {
+        "colors": {
+          "background": {
+            "app": "#09090b",
+            "surface": "#18181b",
+            "surface-hover": "#27272a"
+          },
+          "text": {
+            "primary": "#fafafa",
+            "secondary": "#a1a1aa",
+            "muted": "#52525b",
+            "inverted": "#000000"
+          },
+          "accent": {
+            "blue": "#3b82f6"
+          }
+        },
+        "effects": {
+          "shadows": {
+            "glow": "0 0 20px rgba(59, 130, 246, 0.1)"
+          }
+        },
+        "components": {
+          "technical-grid": {
+            "css": "background-image: radial-gradient(circle, #3f3f46 1px, transparent 1px); background-size: 40px 40px;"
+          }
+        }
+      }
     }
   ]
 };
-
-// We also export the full JSON objects for download purposes. 
-// Since the prompt provided distinct blocks, I will simulate the full content download by stringifying the specific object from the array above, 
-// but logically the prompt implies these are distinct files. 
-// For the purpose of the app, downloading the specific subset object is sufficient representation.

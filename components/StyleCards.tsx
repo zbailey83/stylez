@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleDefinition } from '../types';
-import { Download, ArrowRight, Layers, Box, Cpu, Grid, Zap, Layout, FileText } from 'lucide-react';
+import { Download, ArrowRight, Layers, Box, Cpu, Grid, Zap, Layout, FileText, Code2, Terminal } from 'lucide-react';
 
 interface CardProps {
   styleData: StyleDefinition;
@@ -302,6 +302,72 @@ export const TechnicalPaperCard: React.FC<CardProps> = ({ styleData, onDownload 
             <Download size={10} />
         </div>
       </button>
+    </div>
+  </div>
+);
+
+// 10. Gemini Technical Artifacts
+export const GeminiTechnicalCard: React.FC<CardProps> = ({ styleData, onDownload }) => (
+  <div className="h-full bg-[#09090b] text-[#fafafa] relative overflow-hidden rounded-xl border border-[#27272a] hover:border-[#3f3f46] transition-colors duration-300 flex flex-col shadow-[0_0_20px_rgba(0,0,0,0.5)] group">
+    
+    {/* Dot Grid Background */}
+    <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" 
+         style={{
+             backgroundImage: 'radial-gradient(circle, #71717a 1px, transparent 1px)',
+             backgroundSize: '24px 24px'
+         }}>
+    </div>
+
+    {/* Technical Corner Brackets */}
+    <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-[#3f3f46] z-20"></div>
+    <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-[#3f3f46] z-20"></div>
+    <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-[#3f3f46] z-20"></div>
+    <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-[#3f3f46] z-20"></div>
+
+    <div className="relative z-10 flex flex-col h-full p-6">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-2">
+          <Terminal size={16} className="text-[#a1a1aa]" />
+          <span className="font-mono text-xs text-[#52525b] uppercase tracking-wider">v1.0.0</span>
+        </div>
+        <div className="flex gap-1">
+          <div className="w-1.5 h-1.5 rounded-full bg-[#27272a]"></div>
+          <div className="w-1.5 h-1.5 rounded-full bg-[#27272a]"></div>
+        </div>
+      </div>
+
+      {/* Title Area */}
+      <div className="mb-4">
+        <h3 className="font-sans font-medium text-lg text-[#fafafa] tracking-tight mb-1">
+          {styleData.name}
+        </h3>
+        <div className="h-[1px] w-12 bg-blue-500/50"></div>
+      </div>
+
+      {/* Description Panel */}
+      <div className="flex-grow">
+        <div className="bg-[#18181b]/50 border border-[#27272a] rounded-lg p-4 backdrop-blur-sm">
+           <p className="font-sans text-sm text-[#a1a1aa] leading-relaxed">
+             {styleData.description}
+           </p>
+           <div className="mt-3 flex gap-2">
+             <span className="px-1.5 py-0.5 bg-[#27272a] rounded text-[10px] font-mono text-[#71717a]">ZINC-950</span>
+             <span className="px-1.5 py-0.5 bg-[#27272a] rounded text-[10px] font-mono text-[#71717a]">INTER</span>
+           </div>
+        </div>
+      </div>
+
+      {/* Action */}
+      <div className="mt-6 pt-6 border-t border-[#27272a] border-dashed">
+        <button
+          onClick={() => onDownload(styleData)}
+          className="w-full py-2.5 bg-[#fafafa] text-black font-sans font-medium text-sm rounded hover:bg-white hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all flex items-center justify-center gap-2"
+        >
+          <span>Download JSON</span>
+          <Code2 size={14} />
+        </button>
+      </div>
     </div>
   </div>
 );
