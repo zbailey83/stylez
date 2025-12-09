@@ -11,7 +11,8 @@ import {
   MinimalCard,
   MaximalistCard,
   TechnicalPaperCard,
-  GeminiTechnicalCard
+  GeminiTechnicalCard,
+  RetroGamingCard
 } from './components/StyleCards';
 
 const App: React.FC = () => {
@@ -51,6 +52,8 @@ const App: React.FC = () => {
         return <TechnicalPaperCard styleData={style} onDownload={handleDownload} />;
       case 10:
         return <GeminiTechnicalCard styleData={style} onDownload={handleDownload} />;
+      case 11:
+        return <RetroGamingCard styleData={style} onDownload={handleDownload} />;
       default:
         return <MinimalCard styleData={style} onDownload={handleDownload} />;
     }

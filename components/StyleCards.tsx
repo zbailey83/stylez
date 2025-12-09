@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleDefinition } from '../types';
-import { Download, ArrowRight, Layers, Box, Cpu, Grid, Zap, Layout, FileText, Code2, Terminal } from 'lucide-react';
+import { Download, ArrowRight, Layers, Box, Cpu, Grid, Zap, Layout, FileText, Code2, Terminal, Gamepad2 } from 'lucide-react';
 
 interface CardProps {
   styleData: StyleDefinition;
@@ -368,6 +368,52 @@ export const GeminiTechnicalCard: React.FC<CardProps> = ({ styleData, onDownload
           <Code2 size={14} />
         </button>
       </div>
+    </div>
+  </div>
+);
+
+// 11. 8-Bit / Retro Console
+export const RetroGamingCard: React.FC<CardProps> = ({ styleData, onDownload }) => (
+  <div className="h-full bg-[#212529] p-1 shadow-[4px_4px_0_0_#000000] flex flex-col group relative overflow-hidden">
+    {/* CRT Overlay Effect */}
+    <div className="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] z-30"></div>
+    <div className="absolute inset-0 pointer-events-none z-40 bg-[radial-gradient(circle,_rgba(0,0,0,0)_50%,_rgba(0,0,0,0.4)_100%)]"></div>
+
+    {/* Main Container Board */}
+    <div className="flex-grow border-4 border-white p-4 flex flex-col bg-[#2a2d3e] relative z-20">
+      
+      {/* Header Bar */}
+      <div className="flex items-center justify-between mb-6 border-b-4 border-white pb-2 bg-[#212529] p-2">
+        <div className="flex items-center gap-2">
+           <Gamepad2 size={24} className="text-[#4cb050]" />
+           <span className="font-pixel text-[10px] text-white uppercase leading-none mt-1">LVL.11</span>
+        </div>
+        <div className="flex gap-1">
+          <div className="w-3 h-3 bg-[#e7040f] shadow-[2px_2px_0_black]"></div>
+          <div className="w-3 h-3 bg-[#ffcc00] shadow-[2px_2px_0_black]"></div>
+        </div>
+      </div>
+
+      {/* Content Text */}
+      <h3 className="font-pixel text-sm text-[#4cb050] mb-4 leading-relaxed uppercase tracking-widest drop-shadow-[2px_2px_0_black]">
+        {styleData.name}
+      </h3>
+      
+      <div className="flex-grow bg-[#212529] border-2 border-[#9ca3af] p-3 shadow-[inset_2px_2px_4px_rgba(0,0,0,0.5)]">
+        <p className="font-retro text-xl text-white leading-tight">
+          {styleData.description}
+          <span className="inline-block w-2 h-4 bg-[#4cb050] ml-1 animate-pulse"></span>
+        </p>
+      </div>
+
+      {/* Action Button */}
+      <button
+        onClick={() => onDownload(styleData)}
+        className="mt-6 w-full py-4 bg-[#e6e6e6] border-b-4 border-r-4 border-b-gray-600 border-r-gray-600 border-t-4 border-l-4 border-t-white border-l-white active:border-t-gray-600 active:border-l-gray-600 active:border-b-white active:border-r-white active:translate-y-1 active:shadow-none transition-none flex items-center justify-center gap-3 hover:bg-white"
+      >
+        <span className="font-pixel text-[10px] text-black uppercase">Start Download</span>
+      </button>
+
     </div>
   </div>
 );

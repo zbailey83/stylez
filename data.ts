@@ -154,6 +154,127 @@ export const galleryData: GalleryData = {
           }
         }
       }
+    },
+    {
+      "id": 11,
+      "name": "8-Bit / Retro Console Interfaces",
+      "aesthetic": "crunchy, nostalgic, arcade-style",
+      "category": "retro-gaming",
+      "description": "A tribute to the golden age of 8-bit consoles and RPGs. Prioritizes rigid grids, crisp pixel edges, and a limited primary color palette. Balances 'gamification' with functional clarity.",
+      "colors": {
+        "background": {
+          "type": "flat solid or dithered pattern",
+          "colors": ["#212529", "#f8f9fa", "#87cf3a"],
+          "effect": "optional CRT vignette overlay",
+          "animation": "static noise (on empty states)"
+        },
+        "accents": {
+          "console_red": "#e7040f",
+          "link_green": "#4cb050",
+          "hero_blue": "#0052cc",
+          "coin_yellow": "#ffcc00",
+          "gameboy_dark": "#0f380f"
+        },
+        "text": {
+          "primary": "#212529 or #ffffff",
+          "secondary": "#9ca3af",
+          "highlight": "console red or coin yellow",
+          "readability": "high contrast, monospaced rhythm"
+        }
+      },
+      "typography": {
+        "logo": {
+          "type": "bitmap font / pixel art",
+          "effects": ["hard drop shadow", "step-gradient fill"],
+          "weight": "400 (pixels simulate bold)",
+          "size": "32-48px (multiples of 8)",
+          "extrusion": "4px hard block shadow"
+        },
+        "headings": {
+          "family": "pixel display font (e.g., 'Press Start 2P', 'VT323')",
+          "weight": "400",
+          "size": "24-32px",
+          "color": "inherit",
+          "effects": "all-caps encouraged"
+        },
+        "body": {
+          "family": "monospaced sans (e.g., 'Courier New', 'Roboto Mono', 'Pixelify Sans')",
+          "weight": "400",
+          "size": "14-16px",
+          "line_height": "1.5",
+          "color": "#212529",
+          "note": "anti-aliasing disabled where possible"
+        }
+      },
+      "components": {
+        "windows": {
+          "style": "dialog box / RPG text container",
+          "appearance": "centered or grid-snapped",
+          "chrome": "thick borders with corner sprites",
+          "shadow": "hard block shadow (4px 4px 0px #000000)",
+          "border": "4px double or solid 'outset' style"
+        },
+        "buttons": {
+          "style": "push-button cartridge",
+          "border": "4px solid (light top/left, dark bottom/right)",
+          "background": "#e6e6e6 or accent color",
+          "padding": "8px 16px",
+          "border_radius": "0px",
+          "hover_state": "invert colors or blink",
+          "active_state": "border colors swap (inset effect)"
+        },
+        "icons": {
+          "style": "16x16 or 32x32 pixel art",
+          "size": "auto (scale nearest-neighbor)",
+          "colors": "limited 4-color palette",
+          "aesthetic": "readable silhouette"
+        }
+      },
+      "layout": {
+        "type": "container-based",
+        "structure": "block-heavy / modular",
+        "composition": "strict grid alignment",
+        "hierarchy": "defined by border thickness and uppercase text",
+        "breakpoints": "mobile-first (inherently blocky)"
+      },
+      "effects": {
+        "overlays": {
+          "scanlines": {
+            "opacity": 0.1,
+            "height": "1px lines",
+            "spacing": "2px",
+            "pointer_events": "none"
+          },
+          "vignette": {
+            "type": "radial gradient",
+            "intensity": "darkens corners",
+            "color": "rgba(0,0,0,0.2)"
+          },
+          "dither": {
+            "texture": "bayer matrix pattern",
+            "opacity": 0.05,
+            "usage": "backgrounds or shadows"
+          }
+        },
+        "animations": {
+          "cursor_blink": "infinite step-end blink (1s)",
+          "text_reveal": "typewriter effect (character by character)",
+          "button_press": "translate(4px, 4px) + remove shadow",
+          "duration": "0s (instant) or 150ms steps",
+          "easing": "steps(4) or linear"
+        },
+        "retro_feel": {
+          "technique": "box-sizing: border-box everywhere",
+          "scroll": "snap scrolling preferred",
+          "depth": "isometric or flat layers (no blur shadows)"
+        }
+      },
+      "characteristics": {
+        "nostalgic": "references NES/SNES interface design",
+        "crunchy": "hard edges, no anti-aliasing",
+        "gamified": "interactions feel like controller inputs",
+        "accessible": "high contrast by default"
+      }
     }
   ]
 };
