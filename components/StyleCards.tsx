@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleDefinition } from '../types';
-import { Download, ArrowRight, Layers, Box, Cpu, Grid, Zap, Layout, FileText, Code2, Terminal, Gamepad2 } from 'lucide-react';
+import { Download, ArrowRight, Layers, Box, Cpu, Grid, Zap, Layout, FileText, Code2, Terminal, Gamepad2, Sparkles } from 'lucide-react';
 
 interface CardProps {
   styleData: StyleDefinition;
@@ -415,5 +415,50 @@ export const RetroGamingCard: React.FC<CardProps> = ({ styleData, onDownload }) 
       </button>
 
     </div>
+  </div>
+);
+
+// 12. Marshmallow
+export const MarshmallowCard: React.FC<CardProps> = ({ styleData, onDownload }) => (
+  <div className="h-full bg-[#f2f5fc] p-6 border border-[#cecece] relative overflow-hidden group font-marshmallow">
+     {/* Background decors based on colors */}
+     <div className="absolute top-0 right-0 w-32 h-32 bg-[#ff97cc] opacity-20 rounded-bl-full pointer-events-none transform transition-transform duration-500 group-hover:scale-110"></div>
+     <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#99cdff] opacity-20 rounded-tr-full pointer-events-none transform transition-transform duration-500 group-hover:scale-110"></div>
+     <div className="absolute top-[20%] left-[10%] w-4 h-4 rounded-full bg-[#f7ecb7] opacity-60 animate-pulse"></div>
+
+     <div className="relative z-10 flex flex-col h-full">
+        <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 bg-[#ff97cc] flex items-center justify-center text-black border border-[#cecece] shadow-[2px_2px_0px_#cecece]">
+               <Sparkles size={20} strokeWidth={1.5} />
+            </div>
+            <div>
+                <h3 className="font-marshmallow text-2xl text-[#1b1b1b] leading-none">Marshmallow</h3>
+                <span className="text-[10px] font-mono text-[#383838] bg-[#f7ecb7] px-1 py-0.5 mt-1 inline-block">theme: soft-sharp</span>
+            </div>
+        </div>
+
+        <div className="flex-grow">
+            <div className="bg-white p-5 border border-[#cecece] shadow-[0px_2px_5px_0px_rgba(153,205,255,0.1)] mb-6 transition-all group-hover:shadow-md">
+                <p className="text-[#1b1b1b] leading-relaxed text-sm">
+                  {styleData.description}
+                </p>
+            </div>
+            {/* Color Palette Preview */}
+            <div className="flex gap-3 mb-4">
+                <div className="h-10 w-10 bg-[#ff97cc] border border-[#cecece] shadow-sm flex items-center justify-center text-[10px] font-mono opacity-90 hover:opacity-100 transition-opacity" title="Primary">#FF</div>
+                <div className="h-10 w-10 bg-[#f7ecb7] border border-[#cecece] shadow-sm flex items-center justify-center text-[10px] font-mono opacity-90 hover:opacity-100 transition-opacity" title="Secondary">#F7</div>
+                <div className="h-10 w-10 bg-[#99cdff] border border-[#cecece] shadow-sm flex items-center justify-center text-[10px] font-mono opacity-90 hover:opacity-100 transition-opacity" title="Accent">#99</div>
+                <div className="h-10 w-10 bg-[#1b1b1b] border border-[#cecece] shadow-sm flex items-center justify-center text-[10px] font-mono text-white opacity-90 hover:opacity-100 transition-opacity" title="Foreground">#1B</div>
+            </div>
+        </div>
+
+        <button
+          onClick={() => onDownload(styleData)}
+          className="w-full py-3 bg-[#1b1b1b] text-[#f2f5fc] font-marshmallow hover:bg-[#ff97cc] hover:text-[#1b1b1b] transition-colors border border-transparent hover:border-[#cecece] shadow-sm flex items-center justify-center gap-2 text-sm uppercase tracking-wider"
+        >
+          <span>Download Theme</span>
+          <Download size={16} />
+        </button>
+     </div>
   </div>
 );
